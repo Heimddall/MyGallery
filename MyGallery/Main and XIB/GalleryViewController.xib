@@ -18,29 +18,57 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVr-Oi-to7">
-                    <rect key="frame" x="266" y="88" width="112" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVr-Oi-to7">
+                    <rect key="frame" x="152" y="89" width="112" height="35"/>
                     <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title=" Add pic"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-FG-bX3">
-                    <rect key="frame" x="6" y="88" width="82" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-FG-bX3">
+                    <rect key="frame" x="16" y="89" width="82" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title=" Back"/>
                     <connections>
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="nzm-hV-mMh"/>
                     </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OML-jX-lhU">
+                    <rect key="frame" x="0.0" y="140" width="393" height="678"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ym5-8g-amo">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tU-p8-rbT">
+                    <rect key="frame" x="329" y="89" width="48" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="120" y="20"/>
+            <constraints>
+                <constraint firstItem="OML-jX-lhU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DOp-Ac-spx"/>
+                <constraint firstItem="OML-jX-lhU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Lqq-xW-1La"/>
+                <constraint firstItem="5tU-p8-rbT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="ROm-bn-1bu"/>
+                <constraint firstItem="XtO-FG-bX3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="RuI-V6-UZa"/>
+                <constraint firstItem="OML-jX-lhU" firstAttribute="top" secondItem="5tU-p8-rbT" secondAttribute="bottom" constant="16" id="VEM-rp-zrZ"/>
+                <constraint firstItem="XtO-FG-bX3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Yj3-8J-yRt"/>
+                <constraint firstItem="5tU-p8-rbT" firstAttribute="leading" secondItem="sVr-Oi-to7" secondAttribute="trailing" constant="65" id="aJG-nr-Y4h"/>
+                <constraint firstItem="OML-jX-lhU" firstAttribute="top" secondItem="XtO-FG-bX3" secondAttribute="bottom" constant="16" id="i9c-sg-7ls"/>
+                <constraint firstItem="sVr-Oi-to7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="mpa-qV-9wZ"/>
+                <constraint firstItem="OML-jX-lhU" firstAttribute="top" secondItem="sVr-Oi-to7" secondAttribute="bottom" constant="16" id="ooz-YC-AUb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5tU-p8-rbT" secondAttribute="trailing" constant="16" id="qS5-Dm-C2k"/>
+                <constraint firstItem="OML-jX-lhU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zMO-h0-Olh"/>
+            </constraints>
+            <point key="canvasLocation" x="119.84732824427481" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
+        <image name="trash.fill" catalog="system" width="119" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -17,6 +17,8 @@
 		DAFA1D222A8BDF03008A6255 /* animation_llciamgl.json in Resources */ = {isa = PBXBuildFile; fileRef = DAFA1D212A8BDF03008A6255 /* animation_llciamgl.json */; };
 		DAFA1D2C2A8C02F1008A6255 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA1D2A2A8C02F1008A6255 /* GalleryViewController.swift */; };
 		DAFA1D2D2A8C02F1008A6255 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFA1D2B2A8C02F1008A6255 /* GalleryViewController.xib */; };
+		DAFA1D312A8D04A9008A6255 /* PIcCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA1D2F2A8D04A9008A6255 /* PIcCollectionViewCell.swift */; };
+		DAFA1D322A8D04A9008A6255 /* PIcCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFA1D302A8D04A9008A6255 /* PIcCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		DAFA1D212A8BDF03008A6255 /* animation_llciamgl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_llciamgl.json; sourceTree = SOURCE_ROOT; };
 		DAFA1D2A2A8C02F1008A6255 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		DAFA1D2B2A8C02F1008A6255 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
+		DAFA1D2F2A8D04A9008A6255 /* PIcCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIcCollectionViewCell.swift; sourceTree = "<group>"; };
+		DAFA1D302A8D04A9008A6255 /* PIcCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PIcCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				DAFA1D0E2A8BDB52008A6255 /* MainLoginViewController.swift */,
 				DAFA1D2A2A8C02F1008A6255 /* GalleryViewController.swift */,
+				DAFA1D2F2A8D04A9008A6255 /* PIcCollectionViewCell.swift */,
+				DAFA1D302A8D04A9008A6255 /* PIcCollectionViewCell.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAFA1D2D2A8C02F1008A6255 /* GalleryViewController.xib in Resources */,
+				DAFA1D322A8D04A9008A6255 /* PIcCollectionViewCell.xib in Resources */,
 				DAFA1D172A8BDB53008A6255 /* LaunchScreen.storyboard in Resources */,
 				DAFA1D142A8BDB53008A6255 /* Assets.xcassets in Resources */,
 				DAFA1D122A8BDB52008A6255 /* Main.storyboard in Resources */,
@@ -174,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAFA1D0F2A8BDB52008A6255 /* MainLoginViewController.swift in Sources */,
+				DAFA1D312A8D04A9008A6255 /* PIcCollectionViewCell.swift in Sources */,
 				DAFA1D2C2A8C02F1008A6255 /* GalleryViewController.swift in Sources */,
 				DAFA1D0B2A8BDB52008A6255 /* AppDelegate.swift in Sources */,
 				DAFA1D0D2A8BDB52008A6255 /* SceneDelegate.swift in Sources */,
