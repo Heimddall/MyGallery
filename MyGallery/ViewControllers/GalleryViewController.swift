@@ -15,7 +15,10 @@ class GalleryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
