@@ -69,7 +69,7 @@ class MainLoginViewController: UIViewController {
             passwordLabel.text = "Enter Password"
             return
         }
-        passwordLabel.text = enteredPassword
+        passwordLabel.text = enteredPassword.getConfidentString()
         
         if enteredPassword == correctPassword {
             confirmPassword()
@@ -90,7 +90,7 @@ class MainLoginViewController: UIViewController {
     }
     
     @IBAction func removeNumber(_ sender: Any) {
-        enteredPassword.removeLast()
+        enteredPassword.deleteLastSymbol()
     }
     
     @IBAction func faceID(_ sender: Any) {
@@ -123,3 +123,23 @@ class MainLoginViewController: UIViewController {
 
 }
 
+extension String {
+    mutating func deleteLastSymbol() {
+        guard count > 0 else {
+            print("nechego udalyat'")
+            return }
+        
+        removeLast()
+    }
+    
+    func getConfidentString() -> String {
+        guard count > 0 else { return "" }
+        
+        var result = String(repeating: "*", count: count)
+        result.removeLast()
+        let lastSymbol = String(last ?? "*")
+        result.append(lastSymbol)
+        
+        return result
+    }
+}
