@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainLoginViewController" customModule="MyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="****" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qi8-ot-hAa">
+                                <rect key="frame" x="16" y="159" width="361" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Tnt-Wv-QYR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="igx-5t-VCj">
+                                <rect key="frame" x="0.0" y="218.99999999999997" width="393" height="401.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aj-ev-O65">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="100.33333333333333"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXs-Rs-i5L">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2M-4h-4M9">
+                                                        <rect key="frame" x="40.666666666666671" y="33" width="49.666666666666671" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="1.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h3O-1F-I66"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="v2M-4h-4M9" firstAttribute="centerY" secondItem="zXs-Rs-i5L" secondAttribute="centerY" id="K3o-1c-k0i"/>
+                                                    <constraint firstItem="v2M-4h-4M9" firstAttribute="centerX" secondItem="zXs-Rs-i5L" secondAttribute="centerX" id="Mkx-kb-2o2"/>
+                                                    <constraint firstItem="v2M-4h-4M9" firstAttribute="top" secondItem="zXs-Rs-i5L" secondAttribute="top" constant="33" id="tTb-tP-SWI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1B-6x-xkZ">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRG-hw-K1a">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="2.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r4s-Rc-zrr"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="mRG-hw-K1a" firstAttribute="top" secondItem="a1B-6x-xkZ" secondAttribute="top" constant="33" id="3fv-je-AZE"/>
+                                                    <constraint firstItem="mRG-hw-K1a" firstAttribute="centerX" secondItem="a1B-6x-xkZ" secondAttribute="centerX" id="D1Z-zu-QLp"/>
+                                                    <constraint firstItem="mRG-hw-K1a" firstAttribute="leading" secondItem="a1B-6x-xkZ" secondAttribute="leading" constant="-8.0000000000000036" id="ikQ-bO-xxU"/>
+                                                    <constraint firstItem="mRG-hw-K1a" firstAttribute="centerY" secondItem="a1B-6x-xkZ" secondAttribute="centerY" id="ydE-oe-8vE"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuK-Y2-VA1">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjZ-3f-BAO">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="3.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jad-DP-8av"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="DjZ-3f-BAO" firstAttribute="centerY" secondItem="JuK-Y2-VA1" secondAttribute="centerY" id="K8A-lM-Epv"/>
+                                                    <constraint firstItem="DjZ-3f-BAO" firstAttribute="top" secondItem="JuK-Y2-VA1" secondAttribute="top" constant="33" id="d3s-4f-xlT"/>
+                                                    <constraint firstItem="DjZ-3f-BAO" firstAttribute="centerX" secondItem="JuK-Y2-VA1" secondAttribute="centerX" id="lse-VZ-2v5"/>
+                                                    <constraint firstItem="DjZ-3f-BAO" firstAttribute="leading" secondItem="JuK-Y2-VA1" secondAttribute="leading" constant="-8.0000000000000071" id="s7U-TA-wjX"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="zXs-Rs-i5L" firstAttribute="width" secondItem="JuK-Y2-VA1" secondAttribute="width" id="Asv-Eg-2ZF"/>
+                                            <constraint firstAttribute="height" constant="100" id="FWY-eR-yjq"/>
+                                            <constraint firstItem="zXs-Rs-i5L" firstAttribute="width" secondItem="a1B-6x-xkZ" secondAttribute="width" id="NEN-PV-aag"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UK-SR-mht">
+                                        <rect key="frame" x="0.0" y="100.33333333333331" width="393" height="100.33333333333331"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYq-4u-Kxz">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22s-nc-s7H">
+                                                        <rect key="frame" x="40.666666666666671" y="33" width="49.666666666666671" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="4.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rhc-LK-gJs"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="22s-nc-s7H" firstAttribute="centerY" secondItem="sYq-4u-Kxz" secondAttribute="centerY" id="2Od-PQ-Mis"/>
+                                                    <constraint firstItem="22s-nc-s7H" firstAttribute="centerX" secondItem="sYq-4u-Kxz" secondAttribute="centerX" id="h2v-lL-e8H"/>
+                                                    <constraint firstItem="22s-nc-s7H" firstAttribute="top" secondItem="sYq-4u-Kxz" secondAttribute="top" constant="33" id="taU-gN-9hC"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUn-UE-q4l">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffx-S4-j3Z">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="5.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOS-7D-F5k"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ffx-S4-j3Z" firstAttribute="leading" secondItem="yUn-UE-q4l" secondAttribute="leading" constant="-8.0000000000000036" id="DEK-5t-1tL"/>
+                                                    <constraint firstItem="ffx-S4-j3Z" firstAttribute="centerX" secondItem="yUn-UE-q4l" secondAttribute="centerX" id="Xte-AC-BCe"/>
+                                                    <constraint firstItem="ffx-S4-j3Z" firstAttribute="centerY" secondItem="yUn-UE-q4l" secondAttribute="centerY" id="c3J-yL-xUU"/>
+                                                    <constraint firstItem="ffx-S4-j3Z" firstAttribute="top" secondItem="yUn-UE-q4l" secondAttribute="top" constant="33" id="q4l-8C-NCF"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vms-Pi-OE2">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-aC-HBa">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="6.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Neg-tS-m8i"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="bZd-aC-HBa" firstAttribute="top" secondItem="vms-Pi-OE2" secondAttribute="top" constant="33" id="1rA-vV-YEs"/>
+                                                    <constraint firstItem="bZd-aC-HBa" firstAttribute="centerX" secondItem="vms-Pi-OE2" secondAttribute="centerX" id="4IH-46-rfG"/>
+                                                    <constraint firstItem="bZd-aC-HBa" firstAttribute="centerY" secondItem="vms-Pi-OE2" secondAttribute="centerY" id="NyQ-L1-K6r"/>
+                                                    <constraint firstItem="bZd-aC-HBa" firstAttribute="leading" secondItem="vms-Pi-OE2" secondAttribute="leading" constant="-8.0000000000000071" id="e0S-1q-gNY"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="sYq-4u-Kxz" firstAttribute="width" secondItem="yUn-UE-q4l" secondAttribute="width" id="A9m-hf-QVK"/>
+                                            <constraint firstItem="sYq-4u-Kxz" firstAttribute="width" secondItem="vms-Pi-OE2" secondAttribute="width" id="Ozs-lZ-cVr"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqs-fB-tTp">
+                                        <rect key="frame" x="0.0" y="200.66666666666669" width="393" height="100.33333333333331"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16W-7Q-ggI">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXO-Vw-Swf">
+                                                        <rect key="frame" x="40.666666666666671" y="33" width="49.666666666666671" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="7.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHL-PD-q5m"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="LXO-Vw-Swf" firstAttribute="centerX" secondItem="16W-7Q-ggI" secondAttribute="centerX" id="FQS-Jt-ecD"/>
+                                                    <constraint firstItem="LXO-Vw-Swf" firstAttribute="top" secondItem="16W-7Q-ggI" secondAttribute="top" constant="33" id="RLr-w7-BNI"/>
+                                                    <constraint firstItem="LXO-Vw-Swf" firstAttribute="centerY" secondItem="16W-7Q-ggI" secondAttribute="centerY" id="VHD-cg-ucH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05d-Ld-oad">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Np-rq-USN">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="8.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YtP-x8-5Ud"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="6Np-rq-USN" firstAttribute="leading" secondItem="05d-Ld-oad" secondAttribute="leading" constant="-8.0000000000000036" id="Ccb-91-aGw"/>
+                                                    <constraint firstItem="6Np-rq-USN" firstAttribute="centerX" secondItem="05d-Ld-oad" secondAttribute="centerX" id="SfK-CG-KhH"/>
+                                                    <constraint firstItem="6Np-rq-USN" firstAttribute="top" secondItem="05d-Ld-oad" secondAttribute="top" constant="33" id="VTR-Oj-YCC"/>
+                                                    <constraint firstItem="6Np-rq-USN" firstAttribute="centerY" secondItem="05d-Ld-oad" secondAttribute="centerY" id="xww-be-jRK"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ts8-iP-Wod">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-eq-QkC">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="9.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dex-89-aHQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="xhi-eq-QkC" firstAttribute="leading" secondItem="ts8-iP-Wod" secondAttribute="leading" constant="-8.0000000000000071" id="JYV-3f-gxi"/>
+                                                    <constraint firstItem="xhi-eq-QkC" firstAttribute="top" secondItem="ts8-iP-Wod" secondAttribute="top" constant="33" id="ZD8-iq-T3J"/>
+                                                    <constraint firstItem="xhi-eq-QkC" firstAttribute="centerX" secondItem="ts8-iP-Wod" secondAttribute="centerX" id="dsW-TX-fOj"/>
+                                                    <constraint firstItem="xhi-eq-QkC" firstAttribute="centerY" secondItem="ts8-iP-Wod" secondAttribute="centerY" id="e82-ma-5jb"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="16W-7Q-ggI" firstAttribute="width" secondItem="ts8-iP-Wod" secondAttribute="width" id="UBe-6J-AbS"/>
+                                            <constraint firstItem="16W-7Q-ggI" firstAttribute="width" secondItem="05d-Ld-oad" secondAttribute="width" id="bcV-fd-TO1"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O52-Cf-6zy">
+                                        <rect key="frame" x="0.0" y="301" width="393" height="100.33333333333331"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTB-wy-QV1">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUR-Yc-P8H">
+                                                        <rect key="frame" x="40.666666666666657" y="33" width="50" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="faceid" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="faceID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y9n-Gq-aCo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="cUR-Yc-P8H" firstAttribute="top" secondItem="yTB-wy-QV1" secondAttribute="top" constant="33" id="7Bl-f4-J9X"/>
+                                                    <constraint firstItem="cUR-Yc-P8H" firstAttribute="centerY" secondItem="yTB-wy-QV1" secondAttribute="centerY" id="QG3-NZ-wRH"/>
+                                                    <constraint firstItem="cUR-Yc-P8H" firstAttribute="centerX" secondItem="yTB-wy-QV1" secondAttribute="centerX" id="wt4-Ie-kiD"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7W-f5-335">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6e-pG-frV">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="0.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="enterNumToPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ci9-1g-OvU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="L6e-pG-frV" firstAttribute="centerX" secondItem="g7W-f5-335" secondAttribute="centerX" id="Df2-a8-8JJ"/>
+                                                    <constraint firstItem="L6e-pG-frV" firstAttribute="top" secondItem="g7W-f5-335" secondAttribute="top" constant="33" id="EoO-dg-bpI"/>
+                                                    <constraint firstItem="L6e-pG-frV" firstAttribute="leading" secondItem="g7W-f5-335" secondAttribute="leading" constant="-8.0000000000000036" id="L89-Kv-uhP"/>
+                                                    <constraint firstItem="L6e-pG-frV" firstAttribute="centerY" secondItem="g7W-f5-335" secondAttribute="centerY" id="Ot4-Gd-lJN"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-V6-T8L">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="100.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QU-I2-evi">
+                                                        <rect key="frame" x="-8" y="33" width="147" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="delete.left.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="removeNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNP-NH-128"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="2QU-I2-evi" firstAttribute="centerX" secondItem="i6U-V6-T8L" secondAttribute="centerX" id="DeZ-pC-Wht"/>
+                                                    <constraint firstItem="2QU-I2-evi" firstAttribute="leading" secondItem="i6U-V6-T8L" secondAttribute="leading" constant="-8.0000000000000071" id="kDF-yo-tcU"/>
+                                                    <constraint firstItem="2QU-I2-evi" firstAttribute="top" secondItem="i6U-V6-T8L" secondAttribute="top" constant="33" id="pnh-qy-ADv"/>
+                                                    <constraint firstItem="2QU-I2-evi" firstAttribute="centerY" secondItem="i6U-V6-T8L" secondAttribute="centerY" id="xIL-LF-EOT"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="yTB-wy-QV1" firstAttribute="width" secondItem="i6U-V6-T8L" secondAttribute="width" id="3eY-cw-3D3"/>
+                                            <constraint firstItem="yTB-wy-QV1" firstAttribute="width" secondItem="g7W-f5-335" secondAttribute="width" id="p6u-ID-dB6"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2aj-ev-O65" firstAttribute="height" secondItem="uqs-fB-tTp" secondAttribute="height" id="enN-HY-ZRL"/>
+                                    <constraint firstItem="2aj-ev-O65" firstAttribute="height" secondItem="1UK-SR-mht" secondAttribute="height" id="jFH-ge-RHC"/>
+                                    <constraint firstItem="2aj-ev-O65" firstAttribute="height" secondItem="O52-Cf-6zy" secondAttribute="height" id="lJZ-4U-jYf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="igx-5t-VCj" secondAttribute="trailing" id="1Ce-RD-efP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qi8-ot-hAa" secondAttribute="trailing" constant="16" id="57C-aY-oXV"/>
+                            <constraint firstItem="Qi8-ot-hAa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="5JD-YN-JBn"/>
+                            <constraint firstItem="Qi8-ot-hAa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BEM-9P-BGp"/>
+                            <constraint firstItem="Qi8-ot-hAa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Clm-Yj-dzE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="igx-5t-VCj" secondAttribute="bottom" id="DjD-zl-9Nk"/>
+                            <constraint firstItem="igx-5t-VCj" firstAttribute="top" secondItem="Qi8-ot-hAa" secondAttribute="bottom" constant="20" id="M0z-dp-Ddp"/>
+                            <constraint firstItem="igx-5t-VCj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="khs-l5-5MS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="faceID" destination="cUR-Yc-P8H" id="llK-oz-jv4"/>
+                        <outlet property="passwordLabel" destination="Qi8-ot-hAa" id="0Vv-2l-KFO"/>
+                        <outlet property="removeNumber" destination="2QU-I2-evi" id="lMu-MK-bEN"/>
+                        <outletCollection property="passwordNumbers" destination="v2M-4h-4M9" collectionClass="NSMutableArray" id="nN7-NT-ZjM"/>
+                        <outletCollection property="passwordNumbers" destination="mRG-hw-K1a" collectionClass="NSMutableArray" id="Rd3-4f-NU8"/>
+                        <outletCollection property="passwordNumbers" destination="DjZ-3f-BAO" collectionClass="NSMutableArray" id="0fK-f2-GcW"/>
+                        <outletCollection property="passwordNumbers" destination="22s-nc-s7H" collectionClass="NSMutableArray" id="ozv-Mt-Ypu"/>
+                        <outletCollection property="passwordNumbers" destination="ffx-S4-j3Z" collectionClass="NSMutableArray" id="ajz-4h-eFK"/>
+                        <outletCollection property="passwordNumbers" destination="bZd-aC-HBa" collectionClass="NSMutableArray" id="nEV-8M-lUR"/>
+                        <outletCollection property="passwordNumbers" destination="LXO-Vw-Swf" collectionClass="NSMutableArray" id="dpT-KJ-DVq"/>
+                        <outletCollection property="passwordNumbers" destination="6Np-rq-USN" collectionClass="NSMutableArray" id="IpU-Qa-hFk"/>
+                        <outletCollection property="passwordNumbers" destination="xhi-eq-QkC" collectionClass="NSMutableArray" id="n3y-XT-Vih"/>
+                        <outletCollection property="passwordNumbers" destination="L6e-pG-frV" collectionClass="NSMutableArray" id="cTg-MZ-fPg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14.503816793893129" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="0.circle" catalog="system" width="128" height="123"/>
+        <image name="1.circle" catalog="system" width="128" height="123"/>
+        <image name="2.circle" catalog="system" width="128" height="123"/>
+        <image name="3.circle" catalog="system" width="128" height="123"/>
+        <image name="4.circle" catalog="system" width="128" height="123"/>
+        <image name="5.circle" catalog="system" width="128" height="123"/>
+        <image name="6.circle" catalog="system" width="128" height="123"/>
+        <image name="7.circle" catalog="system" width="128" height="123"/>
+        <image name="8.circle" catalog="system" width="128" height="123"/>
+        <image name="9.circle" catalog="system" width="128" height="123"/>
+        <image name="delete.left.fill" catalog="system" width="128" height="102"/>
+        <image name="faceid" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
