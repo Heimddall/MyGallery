@@ -49,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DACDCFE32A93754B0014457B /* GalleryCell */ = {
+			isa = PBXGroup;
+			children = (
+				DAFA1D2F2A8D04A9008A6255 /* PIcCollectionViewCell.swift */,
+				DAFA1D302A8D04A9008A6255 /* PIcCollectionViewCell.xib */,
+			);
+			path = GalleryCell;
+			sourceTree = "<group>";
+		};
 		DAFA1CFE2A8BDB52008A6255 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +81,7 @@
 				DAFA1D0C2A8BDB52008A6255 /* SceneDelegate.swift */,
 				DAFA1D232A8BE120008A6255 /* ViewControllers */,
 				DAFA1D2E2A8CFC6C008A6255 /* Main and XIB */,
+				DACDCFE32A93754B0014457B /* GalleryCell */,
 				DAFA1D132A8BDB53008A6255 /* Assets.xcassets */,
 				DAFA1D152A8BDB53008A6255 /* LaunchScreen.storyboard */,
 				DAFA1D182A8BDB53008A6255 /* Info.plist */,
@@ -85,8 +95,6 @@
 			children = (
 				DAFA1D0E2A8BDB52008A6255 /* MainLoginViewController.swift */,
 				DAFA1D2A2A8C02F1008A6255 /* GalleryViewController.swift */,
-				DAFA1D2F2A8D04A9008A6255 /* PIcCollectionViewCell.swift */,
-				DAFA1D302A8D04A9008A6255 /* PIcCollectionViewCell.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

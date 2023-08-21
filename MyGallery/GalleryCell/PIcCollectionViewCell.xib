@@ -16,18 +16,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="157" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEU-uP-s4l">
-                        <rect key="frame" x="0.0" y="-27" width="157" height="128"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="collectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="KEU-uP-s4l">
+                        <rect key="frame" x="0.0" y="0.0" width="157" height="121"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="KEU-uP-s4l" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FVk-Q2-1zY"/>
-                <constraint firstAttribute="trailing" secondItem="KEU-uP-s4l" secondAttribute="trailing" id="RQ9-R6-ys4"/>
-                <constraint firstItem="KEU-uP-s4l" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ner-fk-2w0"/>
+                <constraint firstItem="KEU-uP-s4l" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UT0-mf-xJ7"/>
+                <constraint firstAttribute="bottom" secondItem="KEU-uP-s4l" secondAttribute="bottom" id="hxF-g1-34n"/>
+                <constraint firstAttribute="trailing" secondItem="KEU-uP-s4l" secondAttribute="trailing" id="kad-t9-7AU"/>
+                <constraint firstItem="KEU-uP-s4l" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xOM-Fm-GuN"/>
             </constraints>
             <size key="customSize" width="157" height="121"/>
+            <connections>
+                <outlet property="imageViewCell" destination="KEU-uP-s4l" id="xfs-6a-Lbj"/>
+            </connections>
             <point key="canvasLocation" x="133.58778625954199" y="44.718309859154935"/>
         </collectionViewCell>
     </objects>
