@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA7DC6552A9F7F82007650E8 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DC6542A9F7F82007650E8 /* URLManager.swift */; };
 		DAFA1D0B2A8BDB52008A6255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA1D0A2A8BDB52008A6255 /* AppDelegate.swift */; };
 		DAFA1D0D2A8BDB52008A6255 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA1D0C2A8BDB52008A6255 /* SceneDelegate.swift */; };
 		DAFA1D0F2A8BDB52008A6255 /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA1D0E2A8BDB52008A6255 /* MainLoginViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA7DC6542A9F7F82007650E8 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		DAFA1D072A8BDB52008A6255 /* MyGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAFA1D0A2A8BDB52008A6255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAFA1D0C2A8BDB52008A6255 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				DAFA1D0A2A8BDB52008A6255 /* AppDelegate.swift */,
 				DAFA1D0C2A8BDB52008A6255 /* SceneDelegate.swift */,
+				DA7DC6542A9F7F82007650E8 /* URLManager.swift */,
 				DAFA1D232A8BE120008A6255 /* ViewControllers */,
 				DAFA1D2E2A8CFC6C008A6255 /* Main and XIB */,
 				DACDCFE32A93754B0014457B /* GalleryCell */,
@@ -193,6 +196,7 @@
 				DAFA1D2C2A8C02F1008A6255 /* GalleryViewController.swift in Sources */,
 				DAFA1D0B2A8BDB52008A6255 /* AppDelegate.swift in Sources */,
 				DAFA1D0D2A8BDB52008A6255 /* SceneDelegate.swift in Sources */,
+				DA7DC6552A9F7F82007650E8 /* URLManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
