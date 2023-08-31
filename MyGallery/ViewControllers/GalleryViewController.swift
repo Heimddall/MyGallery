@@ -38,10 +38,9 @@ class GalleryViewController: UIViewController {
         
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
             let pickerController = UIImagePickerController()
-            pickerController.delegate = self as! any UIImagePickerControllerDelegate & UINavigationControllerDelegate
-            pickerController.allowsEditing = false
-            pickerController.mediaTypes = ["public.image"]
             pickerController.sourceType = .camera
+            pickerController.allowsEditing = true
+            pickerController.delegate = self
             self?.present(pickerController, animated: true)
         }
         
@@ -53,6 +52,15 @@ class GalleryViewController: UIViewController {
             pickerVC.delegate = self
             self?.present(pickerVC, animated: true)
         }
+        
+        let documentPicker = UIAlertAction(title: "FromDocument", style: .default) { [weak self] _ in
+            let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.item], asCopy: false)
+            documentPicker.delegate = self
+            documentPicker.modalPresentationStyle = .formSheet
+
+            self?.present(documentPicker, animated: true, completion: nil)
+        }
+        
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
@@ -133,6 +141,20 @@ extension GalleryViewController: PHPickerViewControllerDelegate {
                 }
             }
         }
+    }
+}
+
+extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+
+        // print out the image size as a test
+        print(image.size)
     }
 }
 
