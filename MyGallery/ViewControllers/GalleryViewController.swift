@@ -44,6 +44,35 @@ class GalleryViewController: UIViewController {
             self?.present(pickerController, animated: true)
         }
         
+        let urlAction = UIAlertAction(title: "withURL", style: .default) { [weak self] _ in
+//
+            let alert = UIAlertController(title: "Put URL with pic here", message: "", preferredStyle: .alert)
+
+            alert.addTextField { (textField) in
+                textField.text = "//"
+            }
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                let textField = alert?.textFields![0]
+                
+                guard let text = textField?.text else {
+                    return
+                }
+                
+                let url = URL(string: text)
+                if let data = try? Data(contentsOf: url!) {
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {[weak self] in
+                        self?.saveImage(image!)
+                        self?.collectionView.reloadData()
+                    }
+                }
+            
+            }))
+            
+            self?.present(alert, animated: true, completion: nil)
+        }
+        
         let galleryAction = UIAlertAction(title: "Gallery", style: .default) { [weak self] _ in
             var config = PHPickerConfiguration()
             config.selectionLimit = 0
@@ -54,11 +83,11 @@ class GalleryViewController: UIViewController {
         }
         
         let documentPicker = UIAlertAction(title: "FromDocument", style: .default) { [weak self] _ in
-            let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.item], asCopy: false)
-            documentPicker.delegate = self
-            documentPicker.modalPresentationStyle = .formSheet
+            let documentPickerVC = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.item], asCopy: false)
+            documentPickerVC.delegate = self
+            documentPickerVC.modalPresentationStyle = .formSheet
 
-            self?.present(documentPicker, animated: true, completion: nil)
+            self?.present(documentPickerVC, animated: true, completion: nil)
         }
         
         
@@ -66,6 +95,8 @@ class GalleryViewController: UIViewController {
         
         alert.addAction(cameraAction)
         alert.addAction(galleryAction)
+        alert.addAction(documentPicker)
+        alert.addAction(urlAction)
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true)
@@ -134,7 +165,7 @@ extension GalleryViewController: PHPickerViewControllerDelegate {
             result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
                 if let image = object as? UIImage {
                     DispatchQueue.main.async {
-                        //                        self?.imageArray.append(image)
+
                         self?.saveImage(image)
                         self?.collectionView.reloadData()
                     }
@@ -153,8 +184,33 @@ extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
 
-        // print out the image size as a test
         print(image.size)
+        DispatchQueue.main.async {
+
+            self.saveImage(image)
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        
+        let url = urls.first
+        if let data = try? Data(contentsOf: url!) {
+        let image = UIImage(data: data)
+            
+            DispatchQueue.main.async {
+                self.saveImage(image!)
+                self.collectionView.reloadData()
+            }
+        }
+
+        controller.dismiss(animated: true)
+        
+        return
+            }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        controller.dismiss(animated: true)
     }
 }
 
@@ -172,6 +228,40 @@ extension GalleryViewController:UICollectionViewDataSource, UICollectionViewDele
         cell.imageViewCell.image = imageArray[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let picViewController = UIViewController()
+        
+        picViewController.view.backgroundColor = .white
+        
+        let picImageView: UIImageView = UIImageView()
+        picImageView.frame.size.width = 400
+        picImageView.frame.size.height = 400
+        picImageView.contentMode = .scaleAspectFit
+        picImageView.center = picViewController.view.center
+        picImageView.image = imageArray[indexPath.row]
+        picViewController.view.addSubview(picImageView)
+        
+        let closeButton = UIButton()
+        closeButton.setTitle("Close", for: .normal)
+        closeButton.backgroundColor = .blue
+        closeButton.titleLabel?.textColor = .white
+        closeButton.titleLabel?.font = .boldSystemFont(ofSize: 24)
+        closeButton.frame = CGRect.init(x: self.view.frame.width/3.5, y: self.view.frame.height/6, width: 180, height: 50)
+        closeButton.layer.cornerRadius = 18
+        
+        picViewController.view.addSubview(closeButton)
+        
+//                closeButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+//
+//        @objc func buttonAction(_ sender:UIButton!) {
+//           print("Button tapped")
+        }
+
+        picViewController.modalPresentationStyle = .formSheet
+        self.present(picViewController, animated: true)
+    }
+    
 }
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout{

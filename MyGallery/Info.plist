@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSFaceIDUsageDescription</key>
-	<string></string>
+	<string>Face ID</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>PhotoLibrary</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
