@@ -34,73 +34,76 @@ class GalleryViewController: UIViewController {
     
     
     func showPickingAlert() {
-        let alert = UIAlertController(title: "Add photo", message: "Choose app for adding photo", preferredStyle: .actionSheet)
-        
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
-            let pickerController = UIImagePickerController()
-            pickerController.sourceType = .camera
-            pickerController.allowsEditing = true
-            pickerController.delegate = self
-            self?.present(pickerController, animated: true)
-        }
-        
-        let urlAction = UIAlertAction(title: "withURL", style: .default) { [weak self] _ in
-//
-            let alert = UIAlertController(title: "Put URL with pic here", message: "", preferredStyle: .alert)
-
-            alert.addTextField { (textField) in
-                textField.text = "//"
+            let alert = UIAlertController(title: "Add photo", message: "Choose app for adding photo", preferredStyle: .actionSheet)
+            
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
+                let pickerController = UIImagePickerController()
+                pickerController.sourceType = .camera
+                pickerController.allowsEditing = true
+                pickerController.delegate = self
+                self?.present(pickerController, animated: true)
             }
+            
+            let urlAction = UIAlertAction(title: "withURL", style: .default) { [weak self] _ in
+    //
+                let alert = UIAlertController(title: "Put URL with pic here", message: "", preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-                let textField = alert?.textFields![0]
-                
-                guard let text = textField?.text else {
-                    return
+                alert.addTextField { (textField) in
+                    textField.placeholder = "URL"
                 }
-                
-                let url = URL(string: text)
-                if let data = try? Data(contentsOf: url!) {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {[weak self] in
-                        self?.saveImage(image!)
-                        self?.collectionView.reloadData()
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                    let textField = alert?.textFields![0]
+                    
+                    guard let text = textField?.text else {
+                        return
                     }
-                }
+                    
+                    let url = URL(string: text)
+                    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                        if let data = try? Data(contentsOf: url!) {
+                            let image = UIImage(data: data)
+                            DispatchQueue.main.async { [weak self] in
+                                self?.saveImage(image!)
+                                self?.collectionView.reloadData()
+                            }
+                        }
+                    }
+                    
+                
+                }))
+                
+                self?.present(alert, animated: true, completion: nil)
+            }
             
-            }))
+            let galleryAction = UIAlertAction(title: "Gallery", style: .default) { [weak self] _ in
+                var config = PHPickerConfiguration()
+                config.selectionLimit = 0
+                
+                let pickerVC = PHPickerViewController(configuration: config)
+                pickerVC.delegate = self
+                self?.present(pickerVC, animated: true)
+            }
             
-            self?.present(alert, animated: true, completion: nil)
-        }
-        
-        let galleryAction = UIAlertAction(title: "Gallery", style: .default) { [weak self] _ in
-            var config = PHPickerConfiguration()
-            config.selectionLimit = 0
-            
-            let pickerVC = PHPickerViewController(configuration: config)
-            pickerVC.delegate = self
-            self?.present(pickerVC, animated: true)
-        }
-        
-        let documentPicker = UIAlertAction(title: "FromDocument", style: .default) { [weak self] _ in
-            let documentPickerVC = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.item], asCopy: false)
-            documentPickerVC.delegate = self
-            documentPickerVC.modalPresentationStyle = .formSheet
+            let documentPicker = UIAlertAction(title: "FromDocument", style: .default) { [weak self] _ in
+                let documentPickerVC = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.item], asCopy: false)
+                documentPickerVC.delegate = self
+                documentPickerVC.modalPresentationStyle = .formSheet
 
-            self?.present(documentPickerVC, animated: true, completion: nil)
+                self?.present(documentPickerVC, animated: true, completion: nil)
+            }
+            
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            alert.addAction(cameraAction)
+            alert.addAction(galleryAction)
+            alert.addAction(documentPicker)
+            alert.addAction(urlAction)
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true)
         }
-        
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addAction(cameraAction)
-        alert.addAction(galleryAction)
-        alert.addAction(documentPicker)
-        alert.addAction(urlAction)
-        alert.addAction(cancelAction)
-        
-        self.present(alert, animated: true)
-    }
     
     @IBAction func addImageToGallery(_ sender: Any) {
         showPickingAlert()
@@ -252,14 +255,17 @@ extension GalleryViewController:UICollectionViewDataSource, UICollectionViewDele
         
         picViewController.view.addSubview(closeButton)
         
-//                closeButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
-//
-//        @objc func buttonAction(_ sender:UIButton!) {
-//           print("Button tapped")
-        }
+        closeButton.addTarget(self, action: #selector(closeDetailedController(_:)), for: .touchUpInside)
+
+        
 
         picViewController.modalPresentationStyle = .formSheet
         self.present(picViewController, animated: true)
+    }
+    
+    @objc func closeDetailedController(_ sender:UIButton!) {
+        self.presentedViewController?.dismiss(animated: true)
+       print("Button tapped")
     }
     
 }
